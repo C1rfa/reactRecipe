@@ -11,3 +11,102 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  padding: 0 1rem;
+}
+
+footer {
+  font-size: 1.2rem;
+}
+
+.content {
+  height: calc(100vh - 64px - 70px);
+  padding: 1.5rem 0;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.text {
+  font-weight: bold;
+  font-size: 3.5rem;
+}
+
+.notFound-wrapper {
+  text-align: center;
+  display: block;
+}
+
+.notFoundImg {
+  width: 500px;
+  height: 500px;
+}
+
+/* Preloader */
+.preloader-box {
+  margin: 0;
+  height: calc(100vh - 64px - 70px);  /* Изменить под контент */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 16em;
+  height: 8em;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+}
+
+.loader::before {
+  width: inherit;
+  height: 0.2em;
+  background-color: #bf360c;
+}
+
+.loader::after {
+  box-sizing: border-box;
+  width: 50%;
+  height: inherit;
+  border: 0.2em solid #bf360c;
+  border-radius: 50%;
+  left: 25%;
+}
+
+.loader span {
+  position: absolute;
+  width: 5%;
+  height: 10%;
+  background-color: #212121;
+  border-radius: 50%;
+  bottom: 0.2em;
+  left: -5%;
+  animation: 2s linear infinite;
+  transform-origin: 50% -3em;
+  animation-name: run, rotating;
+}
+
+.loader span:nth-child(2) {animation-delay: 0.075s;}
+.loader span:nth-child(3) {animation-delay: 0.15s;}
+
+@keyframes run {
+  0% {left: -5%;}
+  10%, 60% {left: calc((100% - 5%) / 2);}
+  70%, 100% {left: 100%;}
+}
+
+@keyframes rotating {
+  0%, 10% {transform: rotate(0deg);}
+  60%, 100% {transform: rotate(-1turn);}
+}
