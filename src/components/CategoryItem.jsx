@@ -13,7 +13,7 @@ export const CategoryItem = props => {
                   <p>{ props.strCategoryDescription }</p>
                 </div>
                 <div className="card-action">
-                  <Link to={`category/${props.idCategory}`} className='btn grey darken-4'>See meals</Link>
+                  <Link to={`/category/${props.strCategory}`} className='btn grey darken-4'>See meals</Link>
                 </div>
               </div>
     );

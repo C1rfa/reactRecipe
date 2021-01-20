@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { getAllCategories, getAllCountries } from './../api';
 
 import { homeReducer } from './../reducers/homeReducer';
@@ -10,8 +11,7 @@ const initialState ={
     countries: [],
 };
 
-
-export const ContextProvider = ({ children }) => {
+export const HomeContextProvider = ({ children }) => {
     const [value, dispatch] = React.useReducer(homeReducer, initialState);
 
     value.getCategories = () => {
