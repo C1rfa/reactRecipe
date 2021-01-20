@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-export const MealItem = props => {    
+export const MealItem = props => {
     return(
         <div className="card red darken-1">
             <div className="card-image">
@@ -12,7 +12,7 @@ export const MealItem = props => {
               <p>{ props.strMeal }</p>
             </div>
             <div className="card-action">
-              <Link to={`/meal/${props.idMeal}`} className='btn grey darken-4'>Open</Link>
+              <Link to={`/recipe/${props.idMeal}`} className='btn grey darken-4'>Open</Link>
             </div>
         </div>
     );  

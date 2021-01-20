@@ -21,6 +21,15 @@ footer {
   font-size: 1.2rem;
 }
 
+img, iframe {
+  max-width: 100%;
+}
+
+iframe {
+  width: 600px;
+  height: 350px;
+}
+
 .content {
   min-height: calc(100vh - 64px - 70px);
   padding: 1.5rem 0;
