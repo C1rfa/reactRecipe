@@ -30,6 +30,12 @@ iframe {
   height: 350px;
 }
 
+.srch-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .content {
   min-height: calc(100vh - 64px - 70px);
   padding: 1.5rem 0;

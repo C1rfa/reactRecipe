@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { getFilteredCategory, getFilteredByCountry } from './../api';
+import { getFilteredCategory, getFilteredByCountry, searchMeal } from './../api';
 
 import { mealsReducer } from './../reducers/mealsReducer';
 
 export const MealsContext = React.createContext();
 
 const initialState = {
-    name: null,
+    name: '',
     meals: [],
 };
 
@@ -27,6 +27,21 @@ export const MealsContextProvider = ({ children }) => {
                 });
         }
     };
+
+    value.setName = str => {
+        dispatch({ type: 'SET_NAME', payload: { name: str } });
+    };
+
+    value.searchMeal = (name = value.name) => {
+        searchMeal(name)
+            .then(data => {
+                dispatch({ type: 'SET_MEALS', payload: { name: name, meals: data.meals } });
+            });
+    };
+
+    value.setDefault = () => {
+        dispatch({ type: 'SET_MEALS', payload: { name: '', meals: [] } });
+    }
 
     return (
         <MealsContext.Provider value={ value }>

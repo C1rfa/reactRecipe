@@ -19,20 +19,20 @@ export const App = () => {
         <BrowserRouter>
             <Header/>
                 <main className="container content">
-                    <Switch>
                         <HomeContextProvider>
                             <MealsContextProvider>
                                 <RecipeContextProvider>
-                                    <Route exact path='/' component={ Home }/>
-                                    <Route path='/category/:name' component={ Meals }/>
-                                    <Route path='/country/:name' component={ Meals }/>
-                                    <Route path='/recipe/:id' component={ Recipe }/>
-                                    <Route path='/404' component={ NotFound }/>
-                                    <Redirect to='/404'/>
+                                    <Switch>
+                                        <Route exact path='/' component={ Home }/>
+                                        <Route path='/category/:name' component={ Meals }/>
+                                        <Route path='/country/:name' component={ Meals }/>
+                                        <Route path='/search' component={ Meals }/>
+                                        <Route path='/recipe/:id' component={ Recipe }/>
+                                        <Route path='*' component={ NotFound }/>
+                                    </Switch>
                                 </RecipeContextProvider>
                             </MealsContextProvider>
                         </HomeContextProvider>
-                    </Switch>
                 </main>
             <Footer/>
         </BrowserRouter>

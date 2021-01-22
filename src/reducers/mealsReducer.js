@@ -5,6 +5,11 @@ export const mealsReducer = (state, {type, payload}) => {
                 name: payload.name,
                 meals: payload.meals,
             };
+        case 'SET_NAME':
+                return {
+                    ...state,
+                    name: payload.name,
+                };
         default:
             return state;
     }

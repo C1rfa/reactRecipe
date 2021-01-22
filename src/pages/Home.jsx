@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
 import { HomeContext } from './../page contexts/homeContext';
 
+import { Search } from './../components/Search';
 import { Preloader } from './../components/Preloader';
 import { CategoryList } from './../components/CategoryList';
 import { CountryList } from './../components/CountryList';
@@ -16,6 +18,7 @@ export const Home = () => {
 
     return(
         <>
+            <Search/>
             <div className="text-primary">
                 <span className='text'>To see meals select category</span>
             </div>

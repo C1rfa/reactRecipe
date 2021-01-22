@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
 import { useParams, useHistory } from 'react-router-dom';
@@ -8,13 +9,25 @@ import { Preloader } from './../components/Preloader';
 
 
 export const Recipe = () => {
-    const { setMeal, meal } = React.useContext(RecipeContext);
+    const { setMeal, setDefault, meal } = React.useContext(RecipeContext);
     const { id } = useParams();
     const { goBack } = useHistory();
 
     React.useEffect(() => {
         setMeal(id);
     }, [id]);
+
+
+    React.useEffect(() => {
+        return () => {
+            setDefault();
+        };
+    }, []);
+
+
+    const goBackHandler = () => {
+        goBack();
+    };
 
     return(
         <>
@@ -34,7 +47,7 @@ export const Recipe = () => {
                         </thead>
                         <tbody>
                         {
-                            Object.keys(meal).map(key => {
+                            Object.keys(meal).map( key => {
                                 if(key.includes('Ingredient') && meal[key]) {
                                     return (
                                         <tr key={key}>
@@ -54,7 +67,7 @@ export const Recipe = () => {
                         </div> : ''}
                 </div>
                 : <Preloader/> }
-                <button className="btn" onClick={ goBack }>Go Back</button>
+                <button className="btn" onClick={ goBackHandler }>Go Back</button>
         </>
     );
 }

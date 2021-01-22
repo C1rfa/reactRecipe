@@ -20,6 +20,10 @@ export const RecipeContextProvider = ({ children }) => {
             });
     };
 
+    value.setDefault = () => {
+        dispatch({ type: 'SET_MEAL', payload: { meal: {} } });
+    };
+
     return (
         <RecipeContext.Provider value={ value }>
             { children }
