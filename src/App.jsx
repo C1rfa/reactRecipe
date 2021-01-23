@@ -16,7 +16,7 @@ import { NotFound } from './pages/NotFound';
 
 export const App = () => {
     return( 
-        <BrowserRouter>
+        <BrowserRouter basename="/reactRecipe">
             <Header/>
                 <main className="container content">
                         <HomeContextProvider>
