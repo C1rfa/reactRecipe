@@ -29,15 +29,27 @@ export const Recipe = () => {
         goBack();
     };
 
+    const recipeTable = Object.keys(meal).map( key => {
+        if(key.includes('Ingredient') && meal[key]) {
+            return (
+                <tr key={key}>
+                    <td>{ meal[key] }</td>
+                    <td>{meal[`strMeasure${key.slice(13)}`]}</td>
+                </tr>
+            );
+        }
+    });
+
     return(
         <>
             { meal.idMeal ? 
                 <div className="recipe">
-                    <img src={ meal.strMealThumb } alt={ meal.strMeal }/>
+                    <img className="main-image" src={ meal.strMealThumb } alt={ meal.strMeal }/>
                     <h1>{ meal.strMeal }</h1>
                     <h6>Category: { meal.strCategory }</h6>
                     { meal.strArea ? <h6>Area: { meal.strArea }</h6> : ''}
                     <p>{ meal.strInstructions }</p>
+                    <h3 className="mesure">Ingredients and measures</h3>
                     <table className="centered">
                         <thead>
                             <tr>
@@ -46,28 +58,17 @@ export const Recipe = () => {
                             </tr>
                         </thead>
                         <tbody>
-                        {
-                            Object.keys(meal).map( key => {
-                                if(key.includes('Ingredient') && meal[key]) {
-                                    return (
-                                        <tr key={key}>
-                                            <td>{ meal[key] }</td>
-                                            <td>{meal[`strMeasure${key.slice(13)}`]}</td>
-                                        </tr>
-                                    );
-                                }
-                            })
-                        }
+                        { recipeTable }
                         </tbody>
                     </table>
                     { meal.strYoutube ? 
                         <div className='row'>
-                            <h5>Video Recipe</h5>
+                            <h3 className="mesure">Video Recipe</h3>
                             <iframe src={`https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}`} title={ meal.strMeal }></iframe>
                         </div> : ''}
+                    <button className="btn" onClick={ goBackHandler }>Go Back</button>
                 </div>
                 : <Preloader/> }
-                <button className="btn" onClick={ goBackHandler }>Go Back</button>
         </>
     );
 }

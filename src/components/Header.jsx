@@ -6,7 +6,7 @@ export const Header = () => {
     return(
         <nav className="deep-orange darken-4">
             <div className="nav-wrapper">
-              <Link to="/" className="brand-logo"><i className="material-icons">receipt</i>React Receipt</Link>
+              <Link to="/" className="brand-logo"><i className="material-icons">receipt</i>React Recipe</Link>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><Link to="/">Home</Link></li>
                 <li><a href="https://github.com/C1rfa/reactRecipe">Repository</a></li>

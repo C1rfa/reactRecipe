@@ -16,11 +16,13 @@ export const Search = () => {
 
 
     return(
-        <div className="row">
-            <div className="input-field col s12">
-                <input type='search' value={ name } placeholder='search' onChange={ onChange }/>
-                <Link to={ `/search?name=${name}` } className="btn srch-btn" onClick={ onClick }> Search </Link>
+        <>
+            <div className="row">
+                <div className="input-field col s12">
+                    <input type='search' value={ name } placeholder='search' onChange={ onChange }/>
+                    <Link to={ `/search?name=${name}` } className="srch-btn btn grey darken-4" onClick={ onClick }> Search </Link>
+                </div>
             </div>
-        </div>
+        </>
     );
 };

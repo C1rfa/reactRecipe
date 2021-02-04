@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Lemonada', cursive;
 }
 
 code {
@@ -26,14 +27,18 @@ img, iframe {
 }
 
 iframe {
+  display: block;
+  margin: auto;
   width: 600px;
   height: 350px;
 }
 
+p {
+  font-family: 'Yusei Magic', sans-serif;
+}
+
 .srch-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
+  width: 100%;
 }
 
 .content {
@@ -89,6 +94,21 @@ iframe {
   flex-direction: column;
 }
 
+.recipe {
+  display: block;
+}
+
+.main-image {
+  display: block;
+  margin: auto;
+  border: #212121 solid 5px;
+}
+
+.mesure {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
 .card-content {
   flex-grow: 1;
 }
@@ -106,6 +126,12 @@ iframe {
   color: black !important;
   font-size: 2rem !important;
   font-weight: 500 !important;
+}
+
+@media (min-height: 812px) {
+  .brand-logo {
+    font-size: 20px !important;
+  }
 }
 
 /* Preloader */
