@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { HomeContextProvider } from './page contexts/homeContext';
 import { MealsContextProvider } from './page contexts/mealsContext';
